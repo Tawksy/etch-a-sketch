@@ -30,7 +30,7 @@ for (let i = 0; i < 256; i++){
     newDiv.style.width = 'calc(100% / 16)';
     newDiv.style.height = 'calc(100% / 16)';
     newDiv.addEventListener("mouseenter", function() {
-        this.style.backgroundColor = 'red'; 
+         rgb_colors(newDiv);
     });
 }
 
@@ -74,10 +74,17 @@ button_reset.addEventListener("click", function() {
         newDiv.style.width = `calc(100% / ${gridSize})`;
         newDiv.style.height = `calc(100% / ${gridSize})`;
         newDiv.addEventListener("mouseenter", function() {
-            this.style.backgroundColor = 'red'; 
+            rgb_colors(newDiv); 
         });
     }
 })
+
+// create random color to fill the grid 
+const rgb_colors = (element) => {
+    const rgb_color_set = '#' + Math.floor(Math.random()*16777215).toString(16);
+    element.style.backgroundColor = rgb_color_set;
+}
+
 
 
 
